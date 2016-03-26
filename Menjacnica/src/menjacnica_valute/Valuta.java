@@ -1,6 +1,6 @@
 package menjacnica_valute;
 
-import java.util.GregorianCalendar;
+
 import java.util.LinkedList;
 
 public class Valuta {
