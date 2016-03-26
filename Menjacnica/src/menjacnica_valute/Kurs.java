@@ -8,6 +8,8 @@ public class Kurs {
 	private double kupovni;
 	private double srednji;
 	private GregorianCalendar datum;
+	
+	
 	public double getProdajni() {
 		return prodajni;
 	}
@@ -44,7 +46,7 @@ public class Kurs {
 		}
 		this.datum = datum;
 	}
-	@Override
+	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -58,7 +60,8 @@ public class Kurs {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
-	@Override
+
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -79,6 +82,11 @@ public class Kurs {
 		if (Double.doubleToLongBits(srednji) != Double.doubleToLongBits(other.srednji))
 			return false;
 		return true;
+	}
+	@Override
+	public String toString() {
+		return "Kurs: [prodajni=" + prodajni + ", kupovni=" + kupovni + ", srednji=" + srednji + ", na dan=" + datum
+				+ "]";
 	}
 	
 	

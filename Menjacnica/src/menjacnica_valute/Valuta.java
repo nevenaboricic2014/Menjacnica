@@ -8,12 +8,16 @@ public class Valuta {
 	public String naziv;
 	public String skraceniNaziv;
 	public LinkedList<Kurs> kursevi;
+	
 	public Valuta() {
+		
 		kursevi=new LinkedList<Kurs>();
 	}
+	
 	public String getNaziv() {
 		return naziv;
 	}
+	
 	public void setNaziv(String naziv) {
 		if(naziv==null || naziv.isEmpty()){
 			throw new RuntimeException("Greska, valuta ne sme biti null ili prazan string");
@@ -31,11 +35,13 @@ public class Valuta {
 		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
-	@Override
+	
+	
 	public String toString() {
 		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv + ", kursevi=" + kursevi + "]";
 	}
-	@Override
+	
+	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -43,7 +49,9 @@ public class Valuta {
 		result = prime * result + ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
 		return result;
 	}
-	@Override
+	
+	
+	
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
