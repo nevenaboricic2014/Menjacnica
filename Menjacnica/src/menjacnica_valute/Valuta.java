@@ -15,12 +15,20 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv==null || naziv.isEmpty()){
+			throw new RuntimeException("Greska, valuta ne sme biti null ili prazan string");
+			
+		}
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv==null || skraceniNaziv.isEmpty()){
+			throw new RuntimeException("Greska, skraceni naziv ne sme biti null ili prazan string");
+			
+		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	@Override
