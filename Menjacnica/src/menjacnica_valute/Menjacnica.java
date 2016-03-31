@@ -16,7 +16,9 @@ public class Menjacnica implements MenjacnicaInterfejs{
 
 	@Override
 	public void ubaciKurs(Valuta v) {
-		
+		if(v==null){
+			throw new RuntimeException("Greska");
+		}
 		if(valute.contains(v)){
 			return;
 		}
@@ -27,7 +29,9 @@ public class Menjacnica implements MenjacnicaInterfejs{
 
 	@Override
 	public void izbrisiKurs(String naziv, String skraceniNaziv, GregorianCalendar datum) {
-		
+		if(naziv==null || skraceniNaziv==null || datum==null){
+			return;
+		}
 		for (int i = 0; i < valute.size(); i++) {
 			Valuta v=valute.get(i);
 			if(v.getNaziv().equals(naziv) && v.getSkraceniNaziv().equals(skraceniNaziv)){
@@ -52,11 +56,11 @@ public class Menjacnica implements MenjacnicaInterfejs{
 			Valuta v=valute.get(i);
 			if(v.getNaziv().equals(naziv)){
 				
-				
-					
-						return v.kursevi.get(i);
-					
-				
+				for(int j=0; j<v.kursevi.size(); j++){
+					if(v.kursevi.get(j).getDatum().equals(datum)){
+						return v.kursevi.get(j);
+					}
+				}
 				
 			}
 		}
