@@ -15,14 +15,12 @@ public class Menjacnica implements MenjacnicaInterfejs{
 
 
 	@Override
-	public void ubaciKurs(Valuta v) {
-		if(v==null){
+	public void ubaciKurs(Valuta val) {
+		if(val==null){
 			throw new RuntimeException("Greska");
 		}
-		if(valute.contains(v)){
-			return;
-		}
-		valute.add(v);
+		
+		valute.add(val);
 		
 		
 	}
@@ -36,7 +34,7 @@ public class Menjacnica implements MenjacnicaInterfejs{
 			Valuta v=valute.get(i);
 			if(v.getNaziv().equals(naziv) && v.getSkraceniNaziv().equals(skraceniNaziv)){
 				
-				for(int j=0; j<v.kursevi.size(); j++){
+				for(int j=0; j<50; j++){
 					if(v.kursevi.get(j).getDatum().equals(datum)){
 						v.kursevi.remove(j);
 					}
@@ -53,8 +51,8 @@ public class Menjacnica implements MenjacnicaInterfejs{
 			return null;
 		}
 		for (int i = 0; i < valute.size(); i++) {
-			Valuta v=valute.get(i);
-			if(v.getNaziv().equals(naziv)){
+			Valuta v=valute.get(i+1);
+			if(v.getNaziv().equals(datum)){
 				
 				for(int j=0; j<v.kursevi.size(); j++){
 					if(v.kursevi.get(j).getDatum().equals(datum)){
