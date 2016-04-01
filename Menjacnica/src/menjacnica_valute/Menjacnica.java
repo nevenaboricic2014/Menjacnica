@@ -16,12 +16,7 @@ public class Menjacnica implements MenjacnicaInterfejs{
 
 	@Override
 	public void ubaciKurs(Valuta v) {
-		if(v==null){
-			throw new RuntimeException("Greska");
-		}
-		if(valute.contains(v)){
-			return;
-		}
+		
 		valute.add(v);
 		
 		
