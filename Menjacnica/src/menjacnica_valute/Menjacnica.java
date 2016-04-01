@@ -13,60 +13,30 @@ public class Menjacnica implements MenjacnicaInterfejs{
 		valute=new LinkedList<Valuta>();
 	}
 
-
 	@Override
 	public void ubaciKurs(Valuta v) {
 		if(v==null){
-			throw new RuntimeException("Greska");
-		}
-		if(valute.contains(v)){
+			return;
+		} 
+		else if(valute.contains(v)){
 			return;
 		}
 		valute.add(v);
-		
-		
 	}
 
 	@Override
 	public void izbrisiKurs(String naziv, String skraceniNaziv, GregorianCalendar datum) {
-		if(naziv==null || skraceniNaziv==null || datum==null){
-			return;
-		}
-		for (int i = 0; i < valute.size(); i++) {
-			Valuta v=valute.get(i);
-			if(v.getNaziv().equals(naziv) && v.getSkraceniNaziv().equals(skraceniNaziv)){
-				
-				for(int j=0; j<v.kursevi.size(); j++){
-					if(v.kursevi.get(j).getDatum().equals(datum)){
-						v.kursevi.remove(j);
-					}
-				}
-				
-			}
-		}
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Kurs vratiKurs(String naziv, GregorianCalendar datum) {
-		if(naziv==null || datum==null){
-			return null;
-		}
-		for (int i = 0; i < valute.size(); i++) {
-			Valuta v=valute.get(i);
-			if(v.getNaziv().equals(naziv)){
-				
-				for(int j=0; j<v.kursevi.size(); j++){
-					if(v.kursevi.get(j).getDatum().equals(datum)){
-						return v.kursevi.get(j);
-					}
-				}
-				
-			}
-		}
-		
-	
-	return null;
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
+
 
 }
