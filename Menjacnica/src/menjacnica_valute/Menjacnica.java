@@ -15,13 +15,14 @@ public class Menjacnica implements MenjacnicaInterfejs{
 
 	@Override
 	public void ubaciKurs(Valuta v) {
+
 		if(v==null){
 			return;
 		} 
 		else if(valute.contains(v)){
 			return;
 		}
-		valute.add(v);
+
 	}
 
 	@Override
